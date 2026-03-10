@@ -1,0 +1,183 @@
+* {
+    font-family: 'JetBrainsMono Nerd Font', 'Symbols Nerd Font', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #cdd6f4;
+    border-radius: 0;
+    border-bottom: none;
+}
+
+/* Tooltips */
+tooltip {
+    background: rgba(24, 24, 37, 0.95);
+    border: 1px solid rgba(137, 180, 250, 0.3);
+    border-radius: 8px;
+    color: #cdd6f4;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
+
+/* Right side modules container - Floating section */
+.modules-right {
+    background: rgba(30, 30, 46, 0.8);
+    border-radius: 10px;
+    border: 1px solid rgba(137, 180, 250, 0.15);
+    margin: 4px 10px 4px 0;
+    padding: 0 8px;
+}
+
+/* Left side - Clock - Floating section */
+#clock {
+    color: #f5e0dc;
+    padding: 0 20px;
+    margin: 4px 0 4px 10px;
+    font-weight: 500;
+    background: rgba(30, 30, 46, 0.8);
+    border-radius: 10px;
+    border: 1px solid rgba(137, 180, 250, 0.15);
+}
+
+/* Center - Workspaces - Floating section */
+#workspaces {
+    background: rgba(30, 30, 46, 0.8);
+    border-radius: 10px;
+    border: 1px solid rgba(137, 180, 250, 0.15);
+    margin: 4px 10px;
+    padding: 0 4px;
+}
+
+#workspaces button {
+    padding: 0 12px;
+    margin: 0 2px;
+    background: transparent;
+    color: #74c7ec;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(116, 199, 236, 0.1);
+    color: #89dceb;
+}
+
+#workspaces button.active {
+    background: rgba(116, 199, 236, 0.15);
+    color: #74c7ec;
+    font-weight: 600;
+}
+
+#workspaces button.urgent {
+    background: rgba(243, 139, 168, 0.15);
+    color: #f38ba8;
+}
+
+/* Right side modules - all with consistent spacing and minimal style */
+#network {
+    padding: 0 10px;
+    color: #a6e3a1;
+    background: transparent;
+}
+
+#bluetooth {
+    padding: 0 10px;
+    color: #cba6f7;
+    background: transparent;
+}
+
+#temperature {
+    padding: 0 10px;
+    color: #fab387;
+    background: transparent;
+}
+
+#battery {
+    padding: 0 10px;
+    color: #94e2d5;
+    background: transparent;
+}
+
+#cpu {
+    padding: 0 10px;
+    color: #f9e2af;
+    background: transparent;
+}
+
+#pulseaudio {
+    padding: 0 10px;
+    color: #f2cdcd;
+    background: transparent;
+}
+
+#custom-power {
+    padding: 0 10px;
+    color: #f38ba8;
+    background: transparent;
+}
+
+/* Subtle hover effects */
+#network:hover,
+#bluetooth:hover,
+#temperature:hover,
+#battery:hover,
+#cpu:hover,
+#pulseaudio:hover {
+    background: rgba(205, 214, 244, 0.1);
+    border-radius: 6px;
+}
+
+/* Power button subtle highlight */
+#custom-power {
+    margin-right: 0;
+}
+
+#custom-power:hover {
+    background: rgba(243, 139, 168, 0.15);
+    border-radius: 6px;
+}
+
+/* Warning states */
+#battery.warning {
+    color: #fab387;
+}
+
+#battery.critical {
+    color: #f38ba8;
+}
+
+#temperature.critical {
+    color: #f38ba8;
+}
+
+#cpu.warning {
+    color: #fab387;
+}
+
+#cpu.critical {
+    color: #f38ba8;
+}
+
+#network.disconnected {
+    color: #6c7086;
+}
+
+#pulseaudio.muted {
+    color: #6c7086;
+}
+
+/* Bluetooth states */
+#bluetooth.off,
+#bluetooth.disabled {
+    color: #6c7086;
+}
+
+#bluetooth.connected {
+    color: #cba6f7;
+}

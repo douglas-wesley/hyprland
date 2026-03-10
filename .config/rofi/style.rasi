@@ -1,0 +1,125 @@
+* {
+    bg-col:  rgba(43, 48, 59, 0.95);
+    bg-col-light: rgba(43, 48, 59, 0.95);
+    border-col: rgba(100, 114, 125, 0.6);
+    selected-col: rgba(43, 48, 59, 0.95);
+    blue: #3498db;
+    fg-col: #ffffff;
+    fg-col2: #f38ba8;
+    grey: #6e738d;
+
+    width: 600;
+    font: "JetBrainsMono Nerd Font 13";
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 360px;
+    border: 2px;
+    border-color: @border-col;
+    border-radius: 10px;
+    background-color: @bg-col;
+}
+
+mainbox {
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: @bg-col;
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: @bg-col;
+}
+
+listview {
+    columns: 4; /* 4 colunas de apps */
+    lines: 3;   /* 3 linhas */
+    padding: 20px;
+    spacing: 15px; /* Espaço entre os ícones */
+    background-color: @bg-col;
+    border: 0px;
+}
+
+element {
+    orientation: vertical; /* Ícone em cima, texto embaixo */
+    padding: 20px 10px;
+    border-radius: 12px;
+    background-color: @bg-col;
+    text-color: @fg-col;
+}
+
+/* Aumenta o ícone */
+element-icon {
+    size: 64px; /* Ícones grandes e bonitos */
+    horizontal-align: 0.5; /* Centralizado */
+}
+
+/* Centraliza o texto */
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    margin: 10px 0 0 0; /* Espaço entre ícone e texto */
+}
+
+/* Efeito de seleção com o seu gradiente */
+element selected {
+    background-image: linear-gradient(45deg, #9b59b6, #8e44ad);
+    text-color: #ffffff;
+    border-radius: 12px;
+}
+
+mode-switcher {
+    spacing: 0;
+  }
+
+button {
+    padding: 10px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @bg-col;
+  text-color: @blue;
+}
+
+message {
+    background-color: @bg-col-light;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @blue;
+    background-color: @bg-col-light;
+}

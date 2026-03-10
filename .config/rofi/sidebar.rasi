@@ -1,0 +1,81 @@
+* {
+    bg-col:  rgba(30, 30, 46, 1);
+    border-col: rgba(166, 227, 161, 0.8); /* Verde Green */
+    selected-col: rgba(49, 50, 68, 1);
+    fg-col: #cdd6f4;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    height: 100%; /* Altura total */
+    width: 400px;
+    location: west; /* Ancora na esquerda */
+    anchor: west;
+    x-offset: 0;
+    y-offset: 0;
+    border: 0px 2px 0px 0px; /* Borda só na direita */
+    border-color: @border-col;
+    background-color: @bg-col;
+}
+
+mainbox {
+    children: [ inputbar, listview, mode-switcher ];
+    background-color: @bg-col;
+}
+
+inputbar {
+    children: [entry];
+    background-color: @bg-col;
+    padding: 20px;
+}
+
+entry {
+    padding: 12px;
+    background-color: rgba(255,255,255,0.1);
+    text-color: @fg-col;
+    border-radius: 8px;
+    placeholder: " Digite para filtrar...";
+}
+
+listview {
+    background-color: @bg-col;
+    padding: 10px;
+    spacing: 5px;
+}
+
+element {
+    padding: 10px;
+    background-color: @bg-col;
+    text-color: @fg-col;
+    border-radius: 8px;
+}
+
+element-icon {
+    size: 28px;
+    padding: 0 10px 0 0;
+}
+
+element selected {
+    background-color: @selected-col;
+    text-color: #a6e3a1; /* Verde destaque */
+    border: 0 0 0 4px;
+    border-color: #a6e3a1;
+}
+
+mode-switcher {
+    padding: 20px;
+    background-color: @bg-col;
+}
+
+button {
+    padding: 10px;
+    background-color: transparent;
+    text-color: #6c7086;
+    cursor: pointer;
+}
+
+button selected {
+    text-color: #a6e3a1;
+    background-color: rgba(166, 227, 161, 0.1);
+    border-radius: 8px;
+}

@@ -1,0 +1,34 @@
+configuration {
+    /* --- Modos e Comportamento --- */
+    /* Nota: Para 'calc' e 'emoji' funcionarem, instale: rofi-calc e rofi-emoji */
+    modi: "favorites:~/.config/rofi/scripts/favorites.sh,drun,calc,emoji,window";
+    
+    /* --- Aparência Básica --- */
+    font: "JetBrainsMono Nerd Font 12";
+    show-icons: true;
+    icon-theme: "Papirus-Dark"; /* Corrigido de Pappirus para Papirus-Dark */
+    terminal: "kitty";
+    
+    /* --- Configurações de Exibição --- */
+    drun-display-format: "{icon} {name}";
+    disable-history: false;
+    hide-scrollbar: true;
+    sidebar-mode: true;
+    location: 0;   /* 0 = Centro da tela */
+    
+    /* --- Textos dos Botões (Com Ícones Nerd Font) --- */
+    display-favorites: " Favs";
+    display-drun:   " Apps";
+    display-run:    "Run";
+    display-window: "󰕰 Window";
+    display-calc:   " Calc";
+    display-emoji:  "󰞅 Emoji";
+    display-filebrowser: "󰉋 Files";
+    display-ssh:    "󰣀 SSH";
+    display-keys:   " Keys";
+    display-network:"󰀂 Network";
+}
+
+/* --- Importação do Tema --- */
+/* Certifique-se que o arquivo ~/.config/rofi/themes/catppuccin-mocha.rasi existe */
+@theme "catppuccin"

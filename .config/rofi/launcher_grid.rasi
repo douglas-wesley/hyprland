@@ -1,0 +1,68 @@
+* {
+    bg-col:  rgba(30, 30, 46, 0.85); /* Mais transparência */
+    border-col: rgba(203, 166, 247, 0.8); /* Roxo Mauve */
+    selected-col: rgba(203, 166, 247, 0.8);
+    fg-col: #cdd6f4;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+window {
+    height: 500px;
+    width: 700px;
+    border: 3px;
+    border-color: @border-col;
+    border-radius: 15px;
+    background-color: @bg-col;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [inputbar, listview];
+    padding: 20px;
+}
+
+inputbar {
+    children: [entry];
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 0 0 20px 0;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @fg-col;
+    placeholder: "   Buscar Aplicativos...";
+    horizontal-align: 0.5; /* Texto centralizado */
+}
+
+listview {
+    columns: 4; /* 4 colunas */
+    lines: 3;
+    background-color: transparent;
+    spacing: 15px;
+}
+
+element {
+    background-color: transparent;
+    text-color: @fg-col;
+    orientation: vertical; /* Ícone em cima, texto embaixo */
+    border-radius: 12px;
+    padding: 20px;
+}
+
+element-icon {
+    size: 64px; /* Ícone Grande */
+    horizontal-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    margin: 10px 0 0 0;
+}
+
+element selected {
+    background-color: @selected-col;
+    text-color: #1e1e2e; /* Texto escuro no fundo claro */
+}

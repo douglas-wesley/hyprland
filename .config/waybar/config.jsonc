@@ -1,0 +1,147 @@
+{
+    "layer": "top",
+    "reload_on_style_change": true,
+    "height": 30,
+    "passthrough": false,
+    
+    // Module layout matching the sketch
+    "modules-left": [
+        "clock"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "network",
+        "bluetooth",
+        "temperature",
+        "battery",
+        "cpu",
+        "pulseaudio",
+        "custom/power"
+    ],
+    
+    // Clock with icons and separate time/date sections
+    "clock": {
+        "format": "󰥔 {0:%I:%M %p}   󰃭 {0:%A, %b %d}",
+        "interval": 1,
+        "tooltip": true,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        // LINHA NOVA ABAIXO: Abre o painel lateral do SwayNC
+        "on-click": "swaync-client -t -sw", 
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    
+    // Minimal workspaces with roman numerals
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "1": "i",
+            "2": "ii",
+            "3": "iii",
+            "4": "iv",
+            "5": "v",
+            "6": "vi",
+            "7": "vii",
+            "8": "viii",
+            "9": "ix",
+            "10": "x"
+        },
+        "persistent-workspaces": {
+            "*": 1
+        }
+    },
+    
+    // Network module
+    "network": {
+        "format-wifi": "{signalStrength}% 󰖩 ",
+        "format-ethernet": "{bandwidthDownBits} 󰈀 ",
+        "format-disconnected": "Offline 󰖪 ",
+        "tooltip-format": "{essid}\nSinal: {signalStrength}%\nIP: {ipaddr}",
+        "tooltip-format-disconnected": "Desconectado",
+        "interval": 2,
+        "on-click": "nm-connection-editor"
+    },
+    
+    // Bluetooth module
+    "bluetooth": {
+        "format": "󰂯 ",
+        "format-disabled": "󰂲 ",
+        "format-off": "󰂲 ",
+        "format-connected": "󰂱 {num_connections}",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+    
+    // Temperature
+    "temperature": {
+        // "thermal-zone": 0,  <-- Método antigo e impreciso
+        // O caminho abaixo é um EXEMPLO. Você deve verificar o seu (leia as instruções).
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input", 
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""],
+        "tooltip": false
+    },
+    
+    // Battery
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% 󰚥",
+        "format-icons": ["󰂃", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}%\n{timeTo}\n{power}W"
+    },
+    
+    // CPU
+    "cpu": {
+        "format": "{usage}% 󰻠",
+        "tooltip": true,
+        "interval": 2,
+        // Instale o 'btop' para isso funcionar bem: sudo pacman -S btop
+        "on-click": "kitty btop" 
+    },
+    // Talvez adiciomnar um módio para o spotify
+    // Audio
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-muted": "󰝟 ",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "tooltip-format": "{volume}%"
+    },
+    
+    // Power button
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "nwg-bar",
+        "tooltip": false
+    }
+}

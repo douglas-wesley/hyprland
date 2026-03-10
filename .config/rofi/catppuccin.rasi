@@ -1,0 +1,130 @@
+* {
+    /* --- CORES COM TRANSPARÊNCIA --- */
+    /* Adicionei 'cc' ou 'b3' no final das cores hex para dar transparência */
+    /* bg-col: #1e1e2e -> Fundo Base */
+    bg-col:  #1e1e2eb3; 
+    
+    /* bg-col-light: #1e1e2e -> Fundo dos Inputs */
+    bg-col-light: #1e1e2e;
+    
+    border-col: #1e1e2e;
+    selected-col: #1e1e2e;
+    blue: #89b4fa;
+    fg-col: #cdd6f4;
+    fg-col2: #f38ba8;
+    grey: #6c7086;
+
+    width: 600;
+    font: "JetBrainsMono Nerd Font 12";
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 400px; /* Aumentei um pouco a altura */
+    border: 2px;
+    border-color: @blue;
+    /* Aqui usamos a cor com transparência definida lá em cima */
+    background-color: @bg-col; 
+    border-radius: 12px;
+}
+
+mainbox {
+    background-color: transparent; /* Importante para o blur funcionar */
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px;
+    text-color: #1e1e2e; /* Texto preto no fundo azul fica mais legível */
+    border-radius: 3px;
+    margin: 20px 0px 0px 20px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 6px;
+    margin: 20px 0px 0px 10px;
+    text-color: @fg-col;
+    background-color: transparent;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 20px 0px 20px; /* Margem ajustada para não colar na borda */
+    columns: 1; /* Calc fica melhor em 1 coluna, mas pode por 2 se preferir */
+    lines: 6;
+    background-color: transparent;
+}
+
+/* --- AJUSTE DOS ITENS (CALC/APPS) --- */
+element {
+    padding: 10px; /* Mais espaço interno (padding) deixa mais "respirável" */
+    background-color: transparent;
+    text-color: @fg-col;
+    border-radius: 6px; /* Borda arredondada no item selecionado */
+}
+
+element-icon {
+    size: 24px;
+    padding: 0px 10px 0px 0px; /* Espaço entre ícone e texto */
+}
+
+element-text {
+    /* Isso aqui centraliza o texto verticalmente, 
+       resolvendo o problema da letra ficar "torta" */
+    vertical-align: 0.5; 
+}
+
+element selected {
+    /* Cor de fundo quando selecionado (mais claro e visível) */
+    background-color:  #45475a; 
+    text-color: @blue;
+}
+
+mode-switcher {
+    spacing: 0;
+    margin: 10px 20px 10px 20px; /* Espaço em volta dos botões de baixo */
+}
+
+button {
+    padding: 10px;
+    background-color: transparent;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: transparent;
+  text-color: @blue;
+}
+
+/* Se aparecer uma mensagem (às vezes o calc usa), estiliza ela também */
+message {
+    background-color: transparent;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 5px;
+}
+textbox {
+    padding: 6px;
+    margin: 20px 0px 0px 20px;
+    text-color: @blue;
+    background-color: transparent;
+}
