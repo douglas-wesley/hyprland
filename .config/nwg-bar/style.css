@@ -1,0 +1,49 @@
+/* Definição Global */
+window {
+    /* MUDANÇA: Fundo totalmente transparente para sumir com o quadrado */
+    background-color: rgba(0, 0, 0, 0);
+    color: #cdd6f4;
+}
+
+/* Container Externo */
+#outer-box {
+    margin: 0px;
+    /* Isso garante que a barra fique centralizada se não for tela cheia */
+}
+
+/* Container Interno (A caixa dos botões) */
+#inner-box {
+    /* A cor do fundo vem para cá */
+    background-color: rgba(30, 30, 46, 0.95); /* Base do Catppuccin */
+    
+    border-radius: 12px;
+    border: none;
+    padding: 20px;
+    margin: 20px;
+    
+    /* Opcional: Uma sombra suave para destacar a barra flutuante */
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Botões e Imagens */
+button, image {
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #cdd6f4;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: rgba(108, 112, 134, 0.4);
+    border: none;
+}
+
+button:focus {
+    box-shadow: none;
+}

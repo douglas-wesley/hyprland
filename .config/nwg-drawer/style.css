@@ -1,0 +1,49 @@
+/* Estilo Catppuccin Mocha para nwg-drawer */
+
+window {
+    /* Fundo escuro levemente transparente */
+    background-color: rgba(30, 30, 46, 0.9);
+    color: #cdd6f4;
+}
+
+/* A barra de pesquisa */
+entry {
+    background-color: rgba(49, 50, 68, 1); /* Surface0 */
+    border: 2px solid #b4befe; /* Lavender border */
+    color: #cdd6f4;
+    border-radius: 12px;
+    padding: 8px;
+    margin: 10px;
+}
+
+entry:focus {
+    border-color: #cba6f7; /* Mauve quando selecionado */
+    box-shadow: none;
+}
+
+/* Os botões dos apps */
+button {
+    border: none;
+    background: none;
+    color: #cdd6f4;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: rgba(88, 91, 112, 0.5); /* Surface2 hover */
+    color: #fff;
+}
+
+/* Botões de categoria (se houver) */
+#category-btn {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 10px;
+}
+
+#category-btn:hover {
+    background-color: rgba(88, 91, 112, 0.5);
+}
