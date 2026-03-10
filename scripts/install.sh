@@ -2,7 +2,7 @@
 
 set -e
 
-echo "🚀 Preparando o ambiente do Douglas..."
+echo "🚀 Preparando o ambiente de Douglas..."
 
 # 1. Instalação do Yay
 if ! command -v yay &>/dev/null; then
@@ -31,7 +31,7 @@ fi
 
 # 4. Restauração dos Dotfiles (Bare Repo)
 echo "📁 Sincronizando dotfiles do GitHub..."
-DOTFILES_REPO="SEU_LINK_DO_GITHUB_AQUI"
+DOTFILES_REPO="git@github.com:douglas-wesley/hyprland.git"
 
 # Evita conflitos se o install.sh do OMZ criou um .zshrc padrão
 [ -f "$HOME/.zshrc" ] && mv "$HOME/.zshrc" "$HOME/.zshrc.bak"
